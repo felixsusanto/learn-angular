@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<!--[if lt IE 7]> 
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--> 
+<!--[if IE 7]> 
+<html class="no-js lt-ie9 lt-ie8"> <![endif]--> 
+<!--[if IE 8]> 
+<html class="no-js lt-ie9"> <![endif]--> 
+<!--[if gt IE 8]>
+<!--> 
+
+<html class="no-js"> 
+  <!--<![endif]--> 
+
+  <head> 
+  <!-- Meta-Information --> 
+  <title>Single Site Awesomeness</title>
+  <!-- etc… --> 
+  <!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com --> 
+  <!--  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">  -->
+  <link rel="stylesheet" href="css/wds-bootstrap.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/modern-business.css"> 
+  <!-- etc… --> 
+  <!-- Our Website CSS Styles --> 
+    <style>
+      body{
+        padding-top:50px;
+      }
+    </style>
+  </head> 
+
+  <body ng-app="singleSiteApp"> 
+  <!--[if lt IE 7]--> 
+  <!-- etc… --> <!--[endif]--> 
+
+    <!-- Our Website Content Goes Here -->
+    
+    <div ng-include='"templates/header.html"'></div>
+    <div ng-view></div>
+    <div ng-include='"templates/footer.html"'></div>
+
+    <!-- Vendor: Javascripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Vendor: Javascripts Angular-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap.min.js"></script>
+
+    <!-- Our Website Javascripts --> 
+    <script src="js/main.js"></script> 
+
+  </body> 
+</html>
