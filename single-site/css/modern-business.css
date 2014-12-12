@@ -4,6 +4,17 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+/* Angular Cursor Pointer Remedy*/
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.wds-carousel-control-center{
+  position: absolute;
+  margin-top: -0.5em;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+}
+
 /* Global Styles */
 
 html,
@@ -26,7 +37,8 @@ body {
 /* Home Page Carousel */
 
 header.carousel {
-    height: 500px;
+    height:500px; /*fallback for IE*/
+    height: 50vh;
 }
 
 header.carousel .item,

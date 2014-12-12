@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     // grunt-express will serve the files from the folders listed in `bases`
     // on specified `port` and `hostname`
     express: {
-      stylesheet: {
+      ex_1: {
         options: {
           port: 9000,
           hostname: "0.0.0.0",
@@ -20,31 +20,20 @@ module.exports = function(grunt) {
                              // http://stackoverflow.com/questions/14594121/express-res-sendfile-throwing-forbidden-error
           livereload: true
         }
-      }
-    },
-    
-    //grunt-contrib-compass to compile scss file to dist files
-    /*
-    compass: {                  // Task
-      dist: {                   // Target
-        options: {              // Target options
-          sassDir: 'src/scss',
-          cssDir: 'dist/css',
-          environment: 'production'
-        }
       },
-      dev: {
+      ex_2: {
         options: {
-          sassDir: 'src/scss',
-          cssDir: 'src/css'
+          port: 9001,
+          hostname: "0.0.0.0",
+          bases: ['sports-feed'],
+          livereload: true
         }
       }
     },
-    */
 
     //grunt-watch will monitor the project files
     watch: {
-      view_stylesheet: {
+      view_ex_1: {
         // Replace with whatever file you want to trigger the update from
         // Either as a String for a single entry 
         // or an Array of String for multiple entries
@@ -54,30 +43,38 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         }
-      } /*,
-      compile_scss: {
-        files: ['src/scss/*.scss'],
-        tasks: ['compass-scss'],
+      },
+      view_ex_2: {
+        files: ['sports-feed/*.html'],
         options: {
           livereload: true
         }
-      }*/
+      }
     },
     // grunt-open will open your browser at the project's URL
     open: {
-      all: {
+      ex_1: {
         // Gets the port from the connect configuration
-        path: 'http://localhost:<%= express.stylesheet.options.port%>'
+        path: 'http://localhost:<%= express.ex_1.options.port%>'
+      },
+      ex_2: {
+        // Gets the port from the connect configuration
+        path: 'http://localhost:<%= express.ex_2.options.port%>'
       }
     }
   });
  
   // Creates the `server` task
   grunt.registerTask('server', [
-    'express',
-    'open',
-    'watch'
+    'express:ex_1',
+    'open:ex_1',
+    'watch:view_ex_1'
   ]);
-  //Compile scss task
-  //grunt.registerTask('compass-scss', ['compass']);
+
+  grunt.registerTask('server-ex2', [
+    'express:ex_2',
+    'open:ex_2',
+    'watch:view_ex_2'
+  ]);
+
 };

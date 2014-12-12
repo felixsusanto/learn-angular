@@ -2,7 +2,7 @@
 * Main AngularJS Web Application
 **/
 var app = angular.module('singleSiteApp', [
-'ngRoute','ui.bootstrap'
+'ngRoute'//,'ui.bootstrap'
 ]);
 
 /**
