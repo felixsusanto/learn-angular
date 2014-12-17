@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         }
       },
       view_ex_2: {
-        files: ['sports-feed/*.html', 'sports-feed/**/*.js'],
+        files: ['sports-feed/**/*.html', 'sports-feed/**/*.js'],
         options: {
           livereload: true
         }
